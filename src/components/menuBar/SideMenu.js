@@ -37,8 +37,8 @@ const SideMenu = () => {
 export default SideMenu;
 
 const Wrapper = styled.div`
-  width: ${(props) => (props.isOpen ? '420px' : '70px')};
-  height: 100%;
+  z-index: 1;
+  position: fixed;
 `;
 
 const MenuIcon = styled.div`
@@ -50,7 +50,7 @@ const MenuIcon = styled.div`
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  position: absolute;
+  position: fixed;
   left: ${(props) => (props.isOpen ? '350px' : '0')};
   width: 70px;
   > div {

@@ -2,7 +2,7 @@ const dayTheme = {
   background: '#ffffff',
   color: '#121212',
   menu: {
-    background: 'rgba(51, 51, 51, 0.6)',
+    background: '#dfe3e6',
     color: 'rgba(0, 0, 0, 0.68)',
   },
 };

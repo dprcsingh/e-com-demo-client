@@ -1,8 +1,9 @@
 import React from 'react';
 import PublicRoute from './publicRoutes';
+import Products from '../../modules/products/Products';
 
 const routes = [
-  { path: '/login', component: '' },
+  { path: '/', component: Products },
   { path: '/register', component: '' },
   { path: '/forget-password', component: '' },
   { path: '/home', component: '' },

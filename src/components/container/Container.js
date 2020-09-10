@@ -11,15 +11,14 @@ export default Container;
 const ContainerWrapper = styled.div`
   background: ${(props) => props.theme.background || '#ffffff'};
   color: ${(props) => props.theme.textColor || '#121212'};
-  width: 100%;
+  width: 100vw;
   height: 100%;
   margin: 0;
   padding: 0;
 
   .menu {
     font-size: 20px;
-    background-color: ${(props) =>
-      props.theme.menu.background || 'rgba(51, 51, 51, 0.6)'};
+    background-color: ${(props) => props.theme.menu.background || '#fffff'};
   }
   .menu a {
     cursor: pointer;

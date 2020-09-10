@@ -22,7 +22,6 @@ const StackWrapper = styled.div`
   justify-content: ${(props) => props.justifyContent || 'flext-Start'};
   flex-direction: ${(props) => (props.vertical ? 'column' : 'row')};
   flex-wrap: ${(props) => (props.noWrap ? 'noWrap' : 'wrap')};
-  align-content: space-around;
   margin: auto 0;
   & > div {
     padding: ${(props) =>
