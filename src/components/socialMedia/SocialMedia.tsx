@@ -2,6 +2,10 @@ import React from 'react';
 import Stack from '../stack/Stack';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+type key = {
+  url: string;
+  icon: object;
+};
 type Props = {
   vertical?: boolean;
   space?: string;
@@ -15,10 +19,10 @@ const SocialMedia = (props: Props) => {
   const font = icon.map((key: any) => {
     return (
       <div key={key.iconName}>
-        <a href="#">
+        <a href={key.url}>
           <FontAwesomeIcon
-            icon={key}
-            className={`socialMedia ${key.iconName}`}
+            icon={key.key}
+            className={`socialMedia ${key.key.iconName}`}
           />
         </a>
       </div>
