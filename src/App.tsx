@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Container from './components/container/Container';
+import GlobalStyles from './style/global';
+import Routes from './router/Routes';
+import { ViewPortProvider } from './context/viewPortContext';
+import { ThemeContext } from 'styled-components';
+import getTheme from './style/theme';
+import { ApolloProvider } from '@apollo/client';
+import client from './client';
 
 function App() {
+  const [themeValue, setTheme] = useState('light');
+  const handleToggleTheme = () => {
+    themeValue === 'light' ? setTheme('dark') : setTheme('light');
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ApolloProvider client={client}>
+      <ViewPortProvider>
+        <ThemeContext.Provider
+          value={{
+            theme: getTheme(themeValue),
+            themeValue,
+            setTheme: handleToggleTheme,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Container theme={getTheme(themeValue)}>
+            <Routes />
+          </Container>
+        </ThemeContext.Provider>
+        <GlobalStyles />
+      </ViewPortProvider>
+    </ApolloProvider>
   );
 }
 
