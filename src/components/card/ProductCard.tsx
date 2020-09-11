@@ -15,7 +15,6 @@ type Props = {
 const ProductCard = (props: Props) => {
   const { price, imgUrl, description, size, theme, isBanner } = props;
   const className = isBanner ? 'banner' : '';
-  console.log('theme', props);
   const sizeOpions = size.map((key, index) => <span key={index}>{key}</span>);
   return (
     <Card className={`card ${className} banner`} theme={theme}>

@@ -11,7 +11,6 @@ type Props = {
 };
 const Section = (props: Props) => {
   const { theme, style, className } = props;
-  console.log('classNm', className);
 
   return (
     <SectionWrapper className={className} theme={theme} style={style}>
