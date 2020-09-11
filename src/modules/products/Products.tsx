@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ProductCard from '../../components/card/ProductCard';
 import Layout from '../../components/layout/Layout';
+import PaginationCard from '../../components/pagination/Pagination';
 import constants from '../../style/constants';
 import GET_PRODUCTS from './queries';
 
@@ -51,6 +52,7 @@ const Products = () => {
           <ProductCard {...obj} />
           <ProductCard {...obj} />
           <ProductCard {...obj} />
+          <PaginationCard />
         </CardContainer>
       </Layout.Section>
     </Layout>

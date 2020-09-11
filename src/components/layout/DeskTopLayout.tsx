@@ -14,6 +14,7 @@ type Props = {
   children?: React.ReactNode;
 };
 const DeskTopLayout = (props: Props) => {
+  const handleCheckout = () => {};
   return (
     <Layout>
       <Layout.Section style={{ width: '80px' }}>
@@ -34,7 +35,11 @@ const DeskTopLayout = (props: Props) => {
           <Stack.Item>
             <FontAwesomeIcon icon={faShoppingBag} />
           </Stack.Item>
-          <Stack.Item>checkout</Stack.Item>
+          <Stack.Item style={{ transform: 'rotate(-90deg)' }}>
+            <span onClick={handleCheckout} style={{ cursor: 'pointer' }}>
+              checkout
+            </span>
+          </Stack.Item>
         </Stack>
       </Layout.Section>
     </Layout>
