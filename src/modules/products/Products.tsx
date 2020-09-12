@@ -2,56 +2,34 @@ import { useQuery } from '@apollo/client';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ProductCard from '../../components/card/ProductCard';
+import ErrorPage from '../../components/error/Error';
 import Layout from '../../components/layout/Layout';
 import PaginationCard from '../../components/pagination/Pagination';
 import constants from '../../style/constants';
+import products from './dummyData';
 import GET_PRODUCTS from './queries';
 
 const Products = () => {
   // const { error, loading, data } = useQuery(GET_PRODUCTS);
-  // if (error) return <h1>Error</h1>;
+  // if (error) return <ErrorPage />;
   // if (loading) return <h1>Loading</h1>;
 
-  // const productData = data.data;
-  const obj = {
-    price: 200,
-    imgUrl: '12.png',
-    description: 'NIKE SHOES',
-    size: ['6', '7', '8', '9'],
-    theme: {
-      background: 'rgba(247,205,123,0.7)',
-    },
-  };
-  const obj1 = {
-    price: 200,
-    imgUrl: '10.png',
-    description: 'NIKE SHOES',
-    size: ['6', '7', '8', '9'],
-    theme: {
-      background: '#BBF6E3',
-    },
-  };
-  const obj2 = {
-    price: 333,
-    imgUrl: '9.png',
-    description: 'Adidas SHOES',
-    size: ['6', '7', '8'],
-    theme: {
-      background: '#BBF6E3',
-    },
-  };
+  const productData = products;
+  const banner = productData.find((key) => key.isBanner);
+  const card = productData.map((key) => {
+    return <ProductCard {...key} />;
+  });
+
   return (
     <Layout>
       <Layout.Section className="oneThird">
         <Banner>
-          <ProductCard {...obj1} />
+          <ProductCard {...banner} />
         </Banner>
       </Layout.Section>
       <Layout.Section>
         <CardContainer>
-          <ProductCard {...obj} />
-          <ProductCard {...obj} />
-          <ProductCard {...obj} />
+          {card}
           <PaginationCard />
         </CardContainer>
       </Layout.Section>

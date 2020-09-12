@@ -5,15 +5,15 @@ import constants from '../../style/constants';
 
 type Props = {
   isBanner?: boolean;
-  price: number;
-  imgUrl: string;
+  price: string;
+  imageUrl: string;
   description: string;
   theme?: object;
   style?: object;
-  size: string[];
+  size: number[];
 };
 const ProductCard = (props: Props) => {
-  const { price, imgUrl, description, size, theme, isBanner } = props;
+  const { price, imageUrl, description, size, theme, isBanner } = props;
   const className = isBanner ? 'banner' : '';
   const sizeOpions = size.map((key, index) => <span key={index}>{key}</span>);
   return (
@@ -22,7 +22,7 @@ const ProductCard = (props: Props) => {
         <h2>{price}</h2>
       </Price>
       <Image className="imgs">
-        <img src={imgUrl} alt="card" />
+        <img src={imageUrl} alt="card" />
       </Image>
       <Content className="content">
         <Description className="description">
@@ -137,6 +137,6 @@ const Size = styled.div`
     cursor: pointer;
   }
   span:hover {
-    background-color: #ffffff;
+    background: inherit;
   }
 `;

@@ -1,14 +1,21 @@
 import { gql } from '@apollo/client';
 
 const GET_PRODUCTS = gql`
-  query GetProducts {
-    getProducts {
-      id
+  query getProducts {
+    message
+    status
+    totalCount
+    data {
       name
-      imgUrl
+      imageUrl
       size
       description
       price
+      brand
+      theme {
+        background
+        color
+      }
     }
   }
 `;
