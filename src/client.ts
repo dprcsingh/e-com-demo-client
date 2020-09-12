@@ -1,7 +1,9 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+const config = process.env.REACT_APP_GRAPHQL_URI;
+
 const client = new ApolloClient({
-  uri: 'https://e-comm-demo.herokuapp.com/graphql',
+  uri: config,
   cache: new InMemoryCache(),
 });
 export default client;
