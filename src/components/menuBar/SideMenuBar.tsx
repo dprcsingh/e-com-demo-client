@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Stack from '../stack/Stack';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoePrints } from '@fortawesome/free-solid-svg-icons';
 import SocialMedia from '../socialMedia/SocialMedia';
 import { icon, menuOptions } from '../../libs/MenuItem';
 import MenuItem from './MenuItem';
+import Logo from '../logo/Logo';
 
 type Props = {
   isOpen: boolean;
@@ -14,11 +13,9 @@ const SideMenuBar = (props: Props) => {
   return (
     <MenuWrapper isOpen={props.isOpen} className="menu">
       <Shoe className="shoe">
-        <img src="8-r.png" alt="card" />
+        <img src="13.png" alt="card" />
       </Shoe>
-      <div>
-        <FontAwesomeIcon icon={faShoePrints} />
-      </div>
+      <Logo style={{ width: '100px' }} />
       <MenuItem menuOptions={menuOptions} />
       <div>
         <Stack space="loose">
@@ -30,8 +27,12 @@ const SideMenuBar = (props: Props) => {
 };
 const Shoe = styled.div`
   position: absolute;
-  top: -15%;
-  right: -50%;
+  img {
+    width: 350px;
+    transform: rotate(-30deg);
+  }
+  top: -20%;
+  right: -60%;
   transition: 1s;
 `;
 const MenuWrapper = styled.div<any>`

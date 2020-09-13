@@ -30,7 +30,7 @@ const Products = () => {
   const productData = data.getProducts.data;
   const banner = productData.find((key: any) => key.isBanner);
   const card = productData.map((key: any) => {
-    return <ProductCard {...key} />;
+    return <ProductCard {...key} s/>;
   });
 
   return (

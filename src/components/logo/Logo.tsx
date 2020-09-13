@@ -3,10 +3,10 @@ import React from 'react';
 import { faShoePrints } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Logo = () => {
+const Logo = ({ style }: any) => {
   return (
     <div>
-      <FontAwesomeIcon icon={faShoePrints} />
+      <img src="shoes.png" alt="logo" className="logo" style={style} />
     </div>
   );
 };

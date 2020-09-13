@@ -34,11 +34,14 @@ const TopBar = () => {
               <BurgerMenu onClick={handleMenuOpen} />
             </Stack.Item>
             <Stack.Item>
-              <Logo />
+              <Logo style={{ width: '60px' }} />
             </Stack.Item>
           </Stack>
           <Stack.Item>
-            <FontAwesomeIcon icon={faShoppingBasket} />
+            <FontAwesomeIcon
+              icon={faShoppingBasket}
+              style={{ fontSize: '30px', color: 'blue' }}
+            />
           </Stack.Item>
         </Stack>
       </Wrapper>

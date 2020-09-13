@@ -30,7 +30,7 @@ const SideMenu = () => {
     <Wrapper isopen={isOpen}>
       <SideMenuBar isOpen={isOpen} />
       <MenuIcon isOpen={isOpen} ref={ref}>
-        <Logo />
+        <Logo style={{ width: '50px' }} />
         <BurgerMenu onClick={handleSideMenu} />
         <SocialMedia icon={icon} vertical space="loose" />
       </MenuIcon>
