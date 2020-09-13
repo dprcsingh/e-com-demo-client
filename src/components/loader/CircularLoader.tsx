@@ -8,8 +8,8 @@ const Circle = () => {
   );
 };
 const Wrapper = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   position: fixed;
   top: 50%;
   left: 50%;

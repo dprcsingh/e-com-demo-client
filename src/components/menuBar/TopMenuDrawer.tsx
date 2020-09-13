@@ -22,7 +22,7 @@ const Wrapper = styled.div<any>`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  top: ${(props) => (props.isOpen ? '50px' : '-100%')};
+  top: ${(props) => (props.isOpen ? '0' : '-100%')};
   width: 100%;
   height: 100%;
   transition: 0.3s ease-in-out;
