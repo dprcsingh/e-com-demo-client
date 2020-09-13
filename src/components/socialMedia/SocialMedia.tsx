@@ -16,9 +16,9 @@ type Props = {
 
 const SocialMedia = (props: Props) => {
   const { vertical, space, justifyContent, icon } = props;
-  const font = icon.map((key: any) => {
+  const font = icon.map((key: any, index: number) => {
     return (
-      <div key={key.iconName}>
+      <div key={index}>
         <a href={key.url}>
           <FontAwesomeIcon
             icon={key.key}

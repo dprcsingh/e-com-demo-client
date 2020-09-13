@@ -1,27 +1,41 @@
 import { useQuery } from '@apollo/client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ProductCard from '../../components/card/ProductCard';
 import ErrorPage from '../../components/error/Error';
 import Layout from '../../components/layout/Layout';
+import Circle from '../../components/loader/CircularLoader';
 import PaginationCard from '../../components/pagination/Pagination';
 import constants from '../../style/constants';
 import products from './dummyData';
 import GET_PRODUCTS from './queries';
 
+type res = {
+  message: String;
+  totalCount: number;
+};
 const Products = () => {
-  // const { error, loading, data } = useQuery(GET_PRODUCTS);
-  // if (error) return <ErrorPage />;
-  // if (loading) return <h1>Loading</h1>;
+  const { error, loading, data } = useQuery(GET_PRODUCTS);
+  const [isLoding, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+  if (error)
+    return (
+      <h1>
+        <ErrorPage />
+      </h1>
+    );
 
-  const productData = products;
-  const banner = productData.find((key) => key.isBanner);
-  const card = productData.map((key) => {
+  if (loading) return <Circle />;
+
+  const productData = data.getProducts.data;
+  const banner = productData.find((key: any) => key.isBanner);
+  const card = productData.map((key: any) => {
     return <ProductCard {...key} />;
   });
 
   return (
     <Layout>
+      {isError && <ErrorPage />}
       <Layout.Section className="oneThird">
         <Banner>
           <ProductCard {...banner} />

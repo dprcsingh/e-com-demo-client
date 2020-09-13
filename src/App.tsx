@@ -5,16 +5,13 @@ import Routes from './router/Routes';
 import { ViewPortProvider } from './context/viewPortContext';
 import { ThemeContext } from 'styled-components';
 import getTheme from './style/theme';
-import { ApolloProvider } from '@apollo/client';
-import client from './client';
-
 function App() {
   const [themeValue, setTheme] = useState('light');
   const handleToggleTheme = () => {
     themeValue === 'light' ? setTheme('dark') : setTheme('light');
   };
   return (
-    <ApolloProvider client={client}>
+    <>
       <ViewPortProvider>
         <ThemeContext.Provider
           value={{
@@ -29,7 +26,7 @@ function App() {
         </ThemeContext.Provider>
         <GlobalStyles />
       </ViewPortProvider>
-    </ApolloProvider>
+    </>
   );
 }
 

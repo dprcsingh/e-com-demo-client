@@ -1,22 +1,22 @@
 const menuOptions = [
   {
-    id: '#',
+    id: 'about',
     value: 'About',
   },
   {
-    id: '#',
+    id: 'sneakers',
     value: 'Sneakers',
   },
   {
-    id: '#',
+    id: 'accessories',
     value: 'Accessories',
   },
   {
-    id: '#',
+    id: 'store',
     value: 'Store',
   },
   {
-    id: '#',
+    id: 'contacts',
     value: 'Contacts',
   },
 ];

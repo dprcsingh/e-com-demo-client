@@ -15,7 +15,8 @@ type Props = {
 const ProductCard = (props: Props) => {
   const { price, imageUrl, description, size, theme, isBanner } = props;
   const className = isBanner ? 'banner' : '';
-  const sizeOpions = size.map((key, index) => <span key={index}>{key}</span>);
+
+  const sizeOptions = size.map((key, index) => <span key={index}>{key}</span>);
   return (
     <Card className={`card ${className} banner`} theme={theme}>
       <Price className="price">
@@ -30,7 +31,7 @@ const ProductCard = (props: Props) => {
         </Description>
         <Size className="size">
           <h4>size:</h4>
-          {sizeOpions}
+          {sizeOptions}
         </Size>
         <Link to="">Add to cart</Link>
       </Content>
